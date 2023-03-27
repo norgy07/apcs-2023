@@ -3,6 +3,8 @@
 
 package unit10;
 
+import javax.lang.model.util.ElementScanner14;
+
 public class Recur {
 
     //fun3 is a 3^x math function
@@ -97,6 +99,16 @@ public class Recur {
         // return 2 * mystery(x - 1);
         // return 4 * mystery(x - 4);
         // return 4 + mystery(x - 1);
+    }
+
+    //FIBONACCI IS A TERRIBLE RECURSION ALGORITHM
+      //could teach it to remember 
+    public static int fib(int n){
+        if (n ==0)
+            return 0;
+        else if (n ==1)
+            return 1;
+        
     }
 
     public static void main(String[] args) {
@@ -223,3 +235,36 @@ public class Recur {
 }
 
 }
+
+
+///////////////////////////////////////////////////////////
+/*  03.24.2023
+ *  APCS Bell Ringer March 20th
+ *  CORRECTIONS
+ */
+
+//Consider the following method:
+public static int mystery(int a, int b){
+    if(a<b)
+        return a;
+    else
+        return b + mystery (a-1, b+1);
+}
+/*What value does (4,2) return?  -----> this returns the value of 7 because... 
+
+ * 4<2 false so returns 2+mystery(3,3)
+ * mystery(3,3): 3 < 3 = false so return 3 + mystery (2,4)
+ * mystery(2,4): 2 < 4 = true so return 2
+ * 2 then plugged in to mystery(3,3) to get 3 + 2 (this is 5)
+ * add that to 2 in the first method call and get SEVEN [correct answer]
+ */
+
+ //Consider the following method: 
+ public static int mystery1(int a, int b){
+    if (a%b == 0)
+        return b;
+    else 
+        return mystery(b, a%b);
+ }
+
+
