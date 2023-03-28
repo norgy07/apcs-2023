@@ -8,33 +8,22 @@ public class PiDay {
 
     // infinite series for π
     // https://en.wikipedia.org/wiki/Pi#Rate_of_convergence
-   public static double piDay (int n, boolean subtract) {
-       double pie = 0; 
-       if (n==0)
-        return 4;
 
-       if (n%2 == 0)
-        subtract = true; 
-       else
-        subtract = false;
-       
-       //Base case
-       if (n < 1000){
-        if (subtract == true){
-         double pi = -4/(2+(n-1)) + piDay(n-1, false);  
-         pie = pi; }
-    
-        else if (subtract == false){   
-         double pi = 4/ (2+(n-1)) + piDay(n-1, true);
-         pie = pi;
-        }
-       }
-       return pie;
+    // 4/1 - 4/3 + 4/5 - 4/7
+   public static double pi (int n, boolean subtract) {
+    //BASE CASE
+    if (n>=1000) return 0.0;
+
+    //RECURSIVE CASE
+    if(!subtract){
+        return 4/(n-1)*(n+2)*n + pi(n+2, false);
+    } else
+        return -4/(n-1)*(n+2)*n + pi(n+2, true );
    }
 
     public static void main(String args[]) {
         // Gregory–Leibniz
-        double pi = piDay(5, false);
+        double pi = pi(576, true);
 
         // Nilakantha
         //double pi = 3 + piDay(3, false);
