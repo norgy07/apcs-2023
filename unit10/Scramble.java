@@ -178,15 +178,13 @@ public class Scramble {
      * @param arr array of integers to shuffle
      */
     public static void shuffle(int arr[]) {
-     //To shuffle an array a of n elements (indices 0..n-1):
-     //for i from n−1 downto 1 do
-     //j ← random integer such that 0 ≤ j ≤ i
-     //exchange a[j] and a[i]
-     int n = arr[].length();
-     List<int> shuff = Arrays.asList(arr[]);
-     for (int i = n-1; i > 0; i--){
-        int j = new Random().nextInt(n);
-        
+        int n = arr.length;
+        for (int i = n-1; i >= 1; i--){
+            int j = (int)(Math.random() * i+1);
+            int place = arr[j];
+            arr[j] = arr[i];
+            arr[i] = arr[j];
+        }
      }
         
 
