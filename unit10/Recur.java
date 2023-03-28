@@ -103,14 +103,7 @@ public class Recur {
 
     //FIBONACCI IS A TERRIBLE RECURSION ALGORITHM
       //could teach it to remember 
-    public static int fib(int n){
-        if (n ==0)
-            return 0;
-        else if (n ==1)
-            return 1;
-        
-    }
-
+ 
     public static void main(String[] args) {
 
         // Consider function fun3
@@ -234,7 +227,7 @@ public class Recur {
 
 }
 
-}
+
 
 
 ///////////////////////////////////////////////////////////
@@ -266,5 +259,26 @@ public static int mystery(int a, int b){
     else 
         return mystery(b, a%b);
  }
+/*  What value does mystery1(111,74) return? 
+ *  This would return 37 because the call stack would be the following: 
+ *  mystery1(111,74)
+ *  mystery1(74, 37)
+ *  then a%b = 0 returns b which is 37
+ */ 
 
 
+//What does the following recursive method compute, if only positive params passed?
+public static int guess(int a, int b){
+    if (a == 0)
+        return 1;
+    else
+        return b*guess(a-1,b);
+}
+
+/*  This returns b^a because this will multiply the base number by itself the amount
+ *  of times that you input as a
+ */
+
+
+
+}
