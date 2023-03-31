@@ -105,3 +105,49 @@ public class Maze {
     }
 
 }
+package unit10;
+
+public class Maze {
+
+    private char[][] grid;
+    private boolean solution;
+  
+    public Maze(int rows, int cols, String maze) {
+      for (int row = 0; row < rows; row++){
+        for (int col = 0; col < cols; col++){
+        grid[l][] = maze.charAt(l)
+        }
+      }
+    }
+  
+    /**
+     * @returns coordinates of the starting location, as "r,c" (row, column)
+     */
+    public String getStart() {
+      
+    }
+  
+    /**
+     * @returns coordinates of the target location, as "r,c" (row, column)
+     */
+    public String getGoal() { 
+
+    }
+  
+    /**
+     * Explores the maze from point r,c to determine if there is a path
+     * to the goal.
+     */
+    private void explore(int r, int c) { 
+
+    }
+  
+    /**
+     * Determins if the maze has a solution or not.
+     */
+    public boolean hasSolution() { 
+
+    }
+  
+
+  }

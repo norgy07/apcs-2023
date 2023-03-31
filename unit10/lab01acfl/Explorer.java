@@ -204,8 +204,20 @@ public class Explorer {
      */
     public static void explore(ArrayList<String> path, int steps) {
         // TODO build a recursive function
+        String whereWeAre = path.get(path.size()-1);
+        System.out.println("We are at " + whereWeAre);
+        if (steps > 0){
+        map.getNeighbors(whereWeAre);
+        for (String next : map.getNeighbors(whereWeAre)){
+            System.out.println("We can get to " + next );
+            Arraylist<String> next = new ArrayList<String>(path);
+            pathNext.add(Next);
+            explore(pathnext, steps);
+        }
+        }
 
     }
+
 
     public static void main(String[] args) {
         map = new TrailMap("edges.json");
@@ -217,7 +229,7 @@ public class Explorer {
 
         // where can you get in 8 steps? use map.getNeighbors
         ArrayList<String> path = new ArrayList<String>();
-        path.add("A1");
+        path.add("C4");
         explore(path, 8);
 
         // how far is that?
