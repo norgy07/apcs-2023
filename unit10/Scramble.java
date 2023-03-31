@@ -97,8 +97,6 @@ public class Scramble {
 package unit10;
 
 import java.util.Arrays;
-import java.util.Random;
-import java.util.random.RandomGenerator;
 
 public class Scramble {
 
@@ -183,7 +181,7 @@ public class Scramble {
             int j = (int)(Math.random() * i+1);
             int place = arr[j];
             arr[j] = arr[i];
-            arr[i] = arr[j];
+            arr[i] = place;
         }
      }
         
