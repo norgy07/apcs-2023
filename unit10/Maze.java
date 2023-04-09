@@ -115,7 +115,7 @@ public class Maze {
     public Maze(int rows, int cols, String maze) {
       for (int row = 0; row < rows; row++){
         for (int col = 0; col < cols; col++){
-        grid[l][] = maze.charAt(l)
+        grid[row][col] = maze.charAt(row+col)
         }
       }
     }
