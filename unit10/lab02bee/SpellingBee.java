@@ -9,10 +9,30 @@ public class SpellingBee {
     private char[] letters;
     private char mustUse;
 
-    // TODO construct me!
+    public SpellingBee(char[] letters, char mustUse) {
+        this.letters = letters;
+        this.mustUse = mustUse;
+    }
 
+    // does it use only the allowed letters?
+    // does it use the required letter?
+    // is it at least 4 characters?
     public boolean checkWord(String word) {
-        // TODO implement me!
+        boolean hasReq = false;
+        boolean fromLets = false;
+        char[] wordsies = new char[word.length()];
+        for (int l = 0; l < word.length(); l++) {
+            wordsies[l] = word.charAt(l);
+            if (word.charAt(l) == mustUse)
+                hasReq = true;
+            for (int is = 0; is < letters.length; is++) {
+                while (word.charAt(l) == letters[is])
+                    fromLets = true;
+            }
+            if (hasReq && fromLets)
+                return true;
+        }
+
         return true;
     }
 
@@ -39,12 +59,17 @@ public class SpellingBee {
     public static void main(String[] args) {
         String[] words = loadFile("words_dropped.txt").split("\n");
         System.out.println("Loaded " + words.length + " words");
-        // TODO solve me!
         // SpellingBee bee = new SpellingBee("ranglty".toCharArray(), 'y');
+        SpellingBee bee = new SpellingBee("ranglty".toCharArray(), 'y');
+        ArrayList 
+        for (int t = 0; t < words.length; t++){
+            if (checkWord(words[t]) == true)
+                System.out.println(words[t]);
+        }        
 
-        // TODO sort words!
+        // sort words!
 
-        // TODO what position in the sorted list is the word "search" ?
+        // what position in the sorted list is the word "search" ?
 
     }
 }

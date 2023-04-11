@@ -204,20 +204,19 @@ public class Explorer {
      */
     public static void explore(ArrayList<String> path, int steps) {
         // TODO build a recursive function
-        String whereWeAre = path.get(path.size()-1);
+        String whereWeAre = path.get(path.size() - 1);
         System.out.println("We are at " + whereWeAre);
-        if (steps > 0){
-        map.getNeighbors(whereWeAre);
-        for (String next : map.getNeighbors(whereWeAre)){
-            System.out.println("We can get to " + next );
-            Arraylist<String> next = new ArrayList<String>(path);
-            pathNext.add(Next);
-            explore(pathnext, steps);
-        }
+        if (steps > 0) {
+            map.getNeighbors(whereWeAre);
+            for (String next : map.getNeighbors(whereWeAre)) {
+                System.out.println("We can get to " + next);
+                ArrayList<String> pathNext = new ArrayList<String>(path);
+                pathNext.add(next);
+                explore(pathNext, steps);
+            }
         }
 
     }
-
 
     public static void main(String[] args) {
         map = new TrailMap("edges.json");
