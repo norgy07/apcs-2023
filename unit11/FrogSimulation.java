@@ -37,7 +37,7 @@ public class FrogSimulation {
      * Returns an integer representing the distance, in inches, to be moved when the
      * frog hops.
      */
-    private int hopDistance() { /* implementation not shown */
+    private int hopDistance() { 
         if (hopList == null) {
             this.leapCount++;
             return (int) (Math.random() * 10);
@@ -54,8 +54,15 @@ public class FrogSimulation {
      * false otherwise.
      */
     public boolean simulate() {
-        /* to be implemented in part (a) */
-        return false; // replace me!
+        int location = 0; 
+        for (int nHops = 0; nHops < maxHops; nHops++){
+            location += hopDistance();
+            if(location >= goalDistance)
+                return true;
+            else
+                return false;
+        }
+        return false;
     }
 
     /**
@@ -65,8 +72,16 @@ public class FrogSimulation {
      * Precondition: num > 0
      */
     public double runSimulations(int num) {
-        /* to be implemented in part (b) */
-        return -1; // replace me!
+        int count = 0;
+        int nSuccess = 0;
+        while (count < maxHops){
+            simulate();
+            if(simulate() == true){
+                nSuccess++;
+            }
+            count++;
+        }
+        return (1.0)*(nSuccess/count); 
     }
 
     public static void check(boolean test) throws AssertionError {
