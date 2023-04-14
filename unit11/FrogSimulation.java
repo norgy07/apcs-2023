@@ -59,8 +59,6 @@ public class FrogSimulation {
             location += hopDistance();
             if(location >= goalDistance)
                 return true;
-            else
-                return false;
         }
         return false;
     }
@@ -74,14 +72,13 @@ public class FrogSimulation {
     public double runSimulations(int num) {
         int count = 0;
         int nSuccess = 0;
-        while (count < maxHops){
-            simulate();
-            if(simulate() == true){
+        while (count < num){
+            if(simulate()){
                 nSuccess++;
             }
             count++;
         }
-        return (1.0)*(nSuccess/count); 
+        return (1.0)*nSuccess/count; 
     }
 
     public static void check(boolean test) throws AssertionError {
@@ -112,6 +109,7 @@ public class FrogSimulation {
 
         sim = new FrogSimulation(23, 5);
         double fraction = sim.runSimulations(400);
+        System.out.println(fraction);
         check(fraction < 1.0 && fraction > 0.0);
         check(sim._leapCount() <= 400 * 5 && sim._leapCount() > 400);
 
