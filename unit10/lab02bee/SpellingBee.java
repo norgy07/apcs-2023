@@ -1,3 +1,6 @@
+
+
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
@@ -16,24 +19,24 @@ public class SpellingBee {
 
     // does it use only the allowed letters?
     // does it use the required letter?
-    // is it at least 4 characters?
+    // is it at least 4 characters? 
     public boolean checkWord(String word) {
         boolean hasReq = false;
         boolean fromLets = false;
         char[] wordsies = new char[word.length()];
-        for (int l = 0; l < word.length(); l++) {
+        for (int l = 0; l < word.length(); l++){
             wordsies[l] = word.charAt(l);
             if (word.charAt(l) == mustUse)
-                hasReq = true;
-            for (int is = 0; is < letters.length; is++) {
-                while (word.charAt(l) == letters[is])
+              hasReq = true;
+            for (int is = 0; is < letters.length; is++){
+                while(word.charAt(l)== letters[is])
                     fromLets = true;
-            }
-            if (hasReq && fromLets)
-                return true;
         }
-
-        return true;
+        if (hasReq && fromLets)
+            return true;
+    }       
+    
+    return true;
     }
 
     /**
@@ -59,13 +62,14 @@ public class SpellingBee {
     public static void main(String[] args) {
         String[] words = loadFile("words_dropped.txt").split("\n");
         System.out.println("Loaded " + words.length + " words");
-        // SpellingBee bee = new SpellingBee("ranglty".toCharArray(), 'y');
+        
+        // solve me!
         SpellingBee bee = new SpellingBee("ranglty".toCharArray(), 'y');
-        ArrayList 
+ 
         for (int t = 0; t < words.length; t++){
-            if (checkWord(words[t]) == true)
+            if (bee.checkWord(words[t]) == true)
                 System.out.println(words[t]);
-        }        
+        }
 
         // sort words!
 
