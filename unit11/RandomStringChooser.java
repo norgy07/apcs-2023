@@ -3,12 +3,29 @@ package unit11;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.math.*;
 
 // 2016 FRQ #1
 // https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap16_frq_computer_science_a.pdf#page=2
 
 public class RandomStringChooser {
-    // TODO part a
+
+    private String [] vals;
+    private int length;
+    
+    public RandomStringChooser(String [] str){
+        vals = str;
+        length = str.length;
+    } 
+
+    public String getName(){
+        int num = 0;
+        if (num !<= (length - 1) || num !>= 0){
+            num = (int) Math.random() * length;
+        }
+        return vals[num];
+        Arrays.asList(vals).remove(num);
+    }
 
     static void check(boolean test) throws AssertionError {
         if (!test)
@@ -52,7 +69,7 @@ class RandomLetterChooser extends RandomStringChooser {
      * Precondition: str contains only letters.
      */
     public RandomLetterChooser(String str) {
-        // TODO part b
+        super(getSingleLetters(str));
     }
 
     /**
