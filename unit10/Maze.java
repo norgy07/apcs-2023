@@ -41,20 +41,33 @@ public class Maze {
    * Explores the maze from point r,c to determine if there is a path
    * to the goal.
    */
+   /**
+     * Uses recursion to see if the maze has a solution or not.
+     * 
+     * Suggested algorithm:
+     * if R and C are in bounds and spot is !#
+     * - if you are at $:
+     * - - set has a solution
+     * - else:
+     * - - mark spot as checked
+     * - - recur up
+     * - - recur down
+     * - - recur left
+     * - - recur right
+     * 
+     * @param r current row index
+     * @param c current column index
+     */
   private void explore(int r, int c) {
-    int a = r;
-    int b = c;
-    for (int row = a; row < maze.length; row++) {
-      for (int col = b; col < maze[0].length; col++) {
-        if (maze[row + 1][col] == '.') {
-          maze[row][col] = 'V';
-          row = row + 1;
-        } else if (maze[row][col + 1] == '.') {
-          maze[row][col] = '>';
-          col = col + 1;
-        } else if (maze[row][col] == '$') {
-          solution = true;
-        }
+    if(r<maze.length && r>=0 && c<maze[0].length && c>=0 && maze[r][c] != '#'){
+      if(maze[r][c] == '$')
+        solution = true;
+      else{
+        maze[r][c]= '#';
+        explore(r-1, c);
+        explore(r+1, c);
+        explore(r, c-1);
+        explore(r, c+1);
       }
     }
   }
@@ -81,28 +94,28 @@ public class Maze {
     Maze example = new Maze(3, 3, "#.@.....$");
     check(example.hasSolution());
 
-    // Maze case1 = new Maze(5, 7, ".#.#....#.#.##@.....$#...#.##..#...");
-    // (case1.hasSolution());
+    Maze case1 = new Maze(5, 7, ".#.#....#.#.##@.....$#...#.##..#...");
+    check(case1.hasSolution());
 
-    // Maze case2 = new Maze(4, 4, ".#.$.##..##.@..#");
-    // check(!case2.hasSolution());
+    Maze case2 = new Maze(4, 4, ".#.$.##..##.@..#");
+    check(!case2.hasSolution());
 
-    // Maze test = new Maze(3, 3, "#.@.....$");
-    // check(test.hasSolution());
+    Maze test = new Maze(3, 3, "#.@.....$");
+    check(test.hasSolution());
 
-    // test = new Maze(3, 3, "##@#####$");
-    // check(!test.hasSolution());
+    test = new Maze(3, 3, "##@#####$");
+    check(!test.hasSolution());
 
-    // test = new Maze(3, 3, "##@#..#.$");
-    // check(test.hasSolution());
+    test = new Maze(3, 3, "##@#..#.$");
+    check(test.hasSolution());
 
-    // test = new Maze(3, 3, "#.@#.##.$");
-    // check(test.hasSolution());
+    test = new Maze(3, 3, "#.@#.##.$");
+    check(test.hasSolution());
 
-    // test = new Maze(3, 3, "##@#.##.$");
-    // check(!test.hasSolution());
+    test = new Maze(3, 3, "##@#.##.$");
+    check(!test.hasSolution());
 
-    // System.out.println("Happy Panda! \uD83D\uDC3C");
+    System.out.println("Happy Panda! \uD83D\uDC3C");
 
   }
 
