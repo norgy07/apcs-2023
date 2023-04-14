@@ -10,26 +10,21 @@ import java.math.*;
 
 public class RandomStringChooser {
 
-    private String [] vals;
-    private int length;
-    
-    public RandomStringChooser(String [] str){
-        vals = str;
-        length = str.length;
-    } 
+    private ArrayList<String> stringy;
 
-    public String getNext(){
-        List <String> strings = Arrays.asList(vals);
-        int num = 0;
-        while (!(num <= (length - 1)) || !(num >= 0)){
-            num = (int) Math.random() * length;
+    public RandomStringChooser(String[] vals) {
+        stringy = new ArrayList<String>();
+        for (int pos = 0; pos < vals.length; pos++) {
+            stringy.add(vals[pos]);
         }
-        strings.remove(num);
-        return vals[num];
     }
 
-    
-
+    public String getNext() {
+        if(stringy.size() == 0)
+            return "NONE";
+        int num = (int) (Math.random() * stringy.size());
+        return stringy.remove(num);
+    }
 
     static void check(boolean test) throws AssertionError {
         if (!test)
@@ -41,12 +36,12 @@ public class RandomStringChooser {
         String[] wordArray = { "wheels", "on", "the", "bus" };
         RandomStringChooser sChooser = new RandomStringChooser(wordArray);
         for (int k = 0; k < 6; k++) {
-        String next = sChooser.getNext();
-        System.out.print(next + " ");
-        if (k < 4)
-        check(Arrays.stream(wordArray).anyMatch(next::equals));
-        else
-        check(next.equals("NONE"));
+            String next = sChooser.getNext();
+            System.out.print(next + " ");
+            if (k < 4)
+                check(Arrays.stream(wordArray).anyMatch(next::equals));
+            else
+                check(next.equals("NONE"));
 
         }
         System.out.println();
@@ -54,12 +49,12 @@ public class RandomStringChooser {
         String word = "cat";
         RandomLetterChooser letterChooser = new RandomLetterChooser(word);
         for (int k = 0; k < 4; k++) {
-        String next = letterChooser.getNext();
-        System.out.print(next);
-        if (k < 3)
-        check(word.indexOf(next) != -1);
-        else
-        check(next.equals("NONE"));
+            String next = letterChooser.getNext();
+            System.out.print(next);
+            if (k < 3)
+                check(word.indexOf(next) != -1);
+            else
+                check(next.equals("NONE"));
         }
         System.out.println();
         System.out.println("Happy Panda! \uD83D\uDC3C");
