@@ -18,14 +18,18 @@ public class RandomStringChooser {
         length = str.length;
     } 
 
-    public String getName(){
+    public String getNext(){
+        List <String> strings = Arrays.asList(vals);
         int num = 0;
-        if (num !<= (length - 1) || num !>= 0){
+        while (!(num <= (length - 1)) || !(num >= 0)){
             num = (int) Math.random() * length;
         }
+        strings.remove(num);
         return vals[num];
-        Arrays.asList(vals).remove(num);
     }
+
+    
+
 
     static void check(boolean test) throws AssertionError {
         if (!test)
@@ -34,31 +38,31 @@ public class RandomStringChooser {
 
     public static void main(String[] args) {
         // Uncomment the following lines to test your code: select and Ctrl+/
-        // String[] wordArray = { "wheels", "on", "the", "bus" };
-        // RandomStringChooser sChooser = new RandomStringChooser(wordArray);
-        // for (int k = 0; k < 6; k++) {
-        // String next = sChooser.getNext();
-        // System.out.print(next + " ");
-        // if (k < 4)
-        // check(Arrays.stream(wordArray).anyMatch(next::equals));
-        // else
-        // check(next.equals("NONE"));
+        String[] wordArray = { "wheels", "on", "the", "bus" };
+        RandomStringChooser sChooser = new RandomStringChooser(wordArray);
+        for (int k = 0; k < 6; k++) {
+        String next = sChooser.getNext();
+        System.out.print(next + " ");
+        if (k < 4)
+        check(Arrays.stream(wordArray).anyMatch(next::equals));
+        else
+        check(next.equals("NONE"));
 
-        // }
-        // System.out.println();
+        }
+        System.out.println();
 
-        // String word = "cat";
-        // RandomLetterChooser letterChooser = new RandomLetterChooser(word);
-        // for (int k = 0; k < 4; k++) {
-        // String next = letterChooser.getNext();
-        // System.out.print(next);
-        // if (k < 3)
-        // check(word.indexOf(next) != -1);
-        // else
-        // check(next.equals("NONE"));
-        // }
-        // System.out.println();
-        // System.out.println("Happy Panda! \uD83D\uDC3C");
+        String word = "cat";
+        RandomLetterChooser letterChooser = new RandomLetterChooser(word);
+        for (int k = 0; k < 4; k++) {
+        String next = letterChooser.getNext();
+        System.out.print(next);
+        if (k < 3)
+        check(word.indexOf(next) != -1);
+        else
+        check(next.equals("NONE"));
+        }
+        System.out.println();
+        System.out.println("Happy Panda! \uD83D\uDC3C");
     }
 }
 
