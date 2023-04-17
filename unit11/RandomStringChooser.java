@@ -2,8 +2,7 @@ package unit11;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.math.*;
+
 
 // 2016 FRQ #1
 // https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap16_frq_computer_science_a.pdf#page=2
