@@ -39,14 +39,24 @@ public class WordPairList {
      * Precondition: words.length >= 2
      */
     public WordPairList(String[] words) {
-        allPairs = words; 
+        allPairs = new ArrayList <WordPair>;
+        for (int i = 0; i < words.length; i++){
+            for (int w = i+1; w < words.length; w++){
+                allPairs.add(new WordPair(words[i], words[w]));
+            }
+        }
     }
 
     /**
      * Returns the number of matches as described in part (b).
+     * the number of matches that have two of the same String
      */
     public int numMatches() {
-        /* to be implemented in part (b) */
+        int count;
+        for (int i = 0; i < allPairs.size(); i++){
+            if (allPairs.get(i).getFirst() == allPairs.get(i).getSecond())
+                count++;
+        }
         return -1; // replace me!
     }
 
