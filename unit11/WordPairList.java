@@ -39,7 +39,7 @@ public class WordPairList {
      * Precondition: words.length >= 2
      */
     public WordPairList(String[] words) {
-        allPairs = new ArrayList <WordPair>;
+        allPairs = new ArrayList <WordPair>();
         for (int i = 0; i < words.length; i++){
             for (int w = i+1; w < words.length; w++){
                 allPairs.add(new WordPair(words[i], words[w]));
@@ -52,12 +52,12 @@ public class WordPairList {
      * the number of matches that have two of the same String
      */
     public int numMatches() {
-        int count;
+        int count = 0;
         for (int i = 0; i < allPairs.size(); i++){
             if (allPairs.get(i).getFirst() == allPairs.get(i).getSecond())
                 count++;
         }
-        return -1; // replace me!
+        return count; // replace me!
     }
 
     public static void check(boolean test) throws AssertionError {
