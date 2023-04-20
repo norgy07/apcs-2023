@@ -1,5 +1,6 @@
 package unit11;
 
+import java.lang.reflect.Array;
 import java.util.stream.IntStream;
 
 // 2019 FRQ #4
@@ -16,8 +17,7 @@ public class LightBoard {
      * Postcondition: each light has a 40% probability of being set to on.
      */
     public LightBoard(int numRows, int numCols) {
-        /* TODO to be implemented in part (a) */
-
+    
     }
 
     /**
