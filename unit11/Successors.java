@@ -21,15 +21,25 @@ class Position {
 
 public class Successors {
     public static Position findPosition(int num, int[][] intArr) {
-        // TODO part a
+        for (int r = 0; r < intArr.length; r++){
+            for (int c = 0; c < intArr[0].length; c++){
+                if (intArr[r][c] == num)
+                    return new Position(r, c);
+            }
+        }
+        return null;
 
-        return null; // replace me
     }
 
     public static Position[][] getSuccessorArray(int[][] intArr) {
-        // TODO part b
-
-        return null; // replace me
+        Position [][] coords = new Position [intArr.length][intArr[0].length]; 
+        for (int r = 0; r < intArr.length; r++){
+            for (int c = 0; c < intArr[0].length; c++){
+                int here = intArr[r][c];
+                coords[r][c] = findPosition(here+1, intArr);
+            }
+        }
+        return null; 
     }
 
     public static void check(boolean test) throws AssertionError {
@@ -37,7 +47,7 @@ public class Successors {
             throw new AssertionError("sad panda");
     }
 
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         int[][] array = { { 15, 5, 9, 10 }, { 12, 16, 11, 6 }, { 14, 8, 13, 7 } };
         check(findPosition(8, array).toString().equals("(2,1)"));
         check(findPosition(17, array) == null);
