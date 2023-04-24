@@ -6,17 +6,21 @@ public class Bird {
     public static void main(String[] args) {
 
         String s = "turkey";
-        // predict before uncommenting
-        // System.out.println(s.substring(1, 4));
+        // predict before uncommenting ---> will print urk because inclusive on first num but exclusive on second
+        System.out.println(s.substring(1, 4));
 
         String t = new String("turkey");
-        // System.out.println(s == t);
+        // EXPLICIT STRINGS COME FROM THE STRING POOL
+        System.out.println(s == t); //FALSE
+        System.out.println("turkey" == t); //FALSE
+        System.out.println(s == "turkey"); //TRUE
+        System.out.println(s.equals(t));
 
         int x = 3 % 7;
-        // System.out.println(x);
+        System.out.println(x); //3 because int division
 
         String w = "ans: " + 4 + 5;
-        // System.out.println(w);
+        System.out.println(w); // ans: 45
 
         int num1 = 0;
         int num2 = 3;
