@@ -18,6 +18,8 @@ public class Bird {
 
         int x = 3 % 7;
         System.out.println(x); //3 because int division
+        x = 7 % 3;
+        System.out.println(x);
 
         String w = "ans: " + 4 + 5;
         System.out.println(w); // ans: 45
@@ -25,9 +27,12 @@ public class Bird {
         int num1 = 0;
         int num2 = 3;
         while ((num2 != 0) && ((num1 / num2) >= 0)) {
-            num1 = num1 + 2;
+            num1 = num1 + 2;// 2,4,6
             num2 = num2 - 1;
+
         }
+
+        recur(7);
         // predict before uncommenting
         // System.out.println(num1 + ", " + num2);
 
@@ -36,10 +41,12 @@ public class Bird {
     }
 
     private static void recur(int n) {
-        if (n != 0) {
+        //if (n != 0) { //calls 7, 5, 3, 1, -1 <----- OVERFLOW Sooooooo....
+        if(n>0){
             recur(n - 2);
             System.out.print(n + " ");
         }
+
     }
 
     // precondition: arr is not empty, and may have negative values
@@ -47,6 +54,14 @@ public class Bird {
     private int smallest(int[] arr, int n) {
         // return smallest value in arr less than n
         // what is the smallest integer?
+    
+        int thisIsSmallest = Integer.MAX_VALUE;
+        for(int 9 = 0; arr.length; i ++){
+            if(arr[i] < n){
+                if (arr[i] < thisIsSmallest){
+                    thisIsSmallest = r[i];
+            }
+        }
         return n; // replace me
     }
 }
