@@ -39,7 +39,7 @@ public class Successors {
                 coords[r][c] = findPosition(here+1, intArr);
             }
         }
-        return null; 
+        return coords; 
     }
 
     public static void check(boolean test) throws AssertionError {
