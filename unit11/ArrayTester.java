@@ -59,34 +59,14 @@ public class ArrayTester {
          * all of first row values appear in each row 
          * first row vals appear in each column
          */
-        int[] first = new int[square[0].length];
-
-        for (int row = 0; row < square.length; row++){
-            for (int col = 0; col < square[0].length; col++){
-                
-                if (row == 0){
-                    first [col] = square[row][col];
-                }
-                if(row != 0){
-                    boolean good = true;
-                    for (int i = 0; i < first.length; i ++){
-                        if (good == true){
-                            if(square[row][col] != first[i])
-                                good = false;
-                        }
-                    }
-                    return good;
-                }    
-                boolean bien = true;
-                for (int i = 0; i < first.length; i ++){
-                    if (bien == true){
-                        if(square[row][col] != first[i])
-                            bien = false;
-                    }
-                }
-                return bien;
-            }
-        }
+        if(containsDuplicates(square[0]))
+            return false;
+        for(int r = 1; r < square.length; r++)
+            if(!hasAllValues(square[0],square[r]))
+                return false;
+        for(int c = 0; c < square[0].length; c++)
+            if(!hasAllValues(square[0],getColumn(square,c)))
+                return false;
         return true;
     }
 
