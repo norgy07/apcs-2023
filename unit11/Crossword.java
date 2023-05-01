@@ -48,8 +48,24 @@ public class Crossword {
      * rule.
      */
     public Crossword(boolean[][] blackSquares) {
-        /* to be implemented in part (b) */
-
+        puzzle = new Square[blackSquares.length][blackSquares[0].length];
+        int ber = 1; 
+        for (int row = 0; row < blackSquares.length; row++){
+            for (int col = 0; col < blackSquares[0].length; col++){
+                if (blackSquares [row][col]){
+                    puzzle [row][col] = new Square (true, 0);
+                }
+                else{
+                    if (toBeLabeled(row,col,blackSquares)){
+                        puzzle[row][col] = new Square (false, ber);
+                        ber ++; 
+                    }
+                    else{
+                        puzzle [row][col] = new Square (false, 0);
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -61,9 +77,17 @@ public class Crossword {
      * Precondition: r and c are valid indexes in blackSquares.
      */
     private boolean toBeLabeled(int r, int c, boolean[][] blackSquares) {
-        /* to be implemented in part (a) */
-
-        return false; // replace me!
+        if (blackSquares[r][c]) return false;
+        else if (r == 0) 
+            return true;
+        else if (c == 0) 
+            return true; 
+        else if (blackSquares[r-1][c]) 
+            return true;
+        else if (blackSquares [r][c-1])
+            return true; 
+        else return false;
+        
     }
 
     // There may be instance variables, constructors, and methods that are not
