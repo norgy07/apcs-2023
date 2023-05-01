@@ -33,6 +33,8 @@ public class Bird {
         }
 
         recur(7);
+        
+        int[] oddball = {1,3,5,7,9,11,13,15,17,19,21};
         // predict before uncommenting
         // System.out.println(num1 + ", " + num2);
 
@@ -46,7 +48,6 @@ public class Bird {
             recur(n - 2);
             System.out.print(n + " ");
         }
-
     }
 
     // precondition: arr is not empty, and may have negative values
@@ -56,12 +57,13 @@ public class Bird {
         // what is the smallest integer?
     
         int thisIsSmallest = Integer.MAX_VALUE;
-        for(int 9 = 0; arr.length; i ++){
+        for(int i = 0; i < arr.length; i ++){
             if(arr[i] < n){
                 if (arr[i] < thisIsSmallest){
-                    thisIsSmallest = r[i];
+                    thisIsSmallest = arr[i];
             }
         }
-        return n; // replace me
+        }
+        return thisIsSmallest; 
     }
 }

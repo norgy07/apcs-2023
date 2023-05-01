@@ -13,7 +13,7 @@ public class Bear {
         name = ("Mr.Bear");
     }
 
-    public getName(){
+    public String getName(){
         return name;
     }
     public static void main (String [] args){
@@ -38,7 +38,7 @@ class Panda extends Bear{
     }
 
     // IMPLICIT DEFAULT CONSTRUCTOR WHEN THERE ARE NO OTHERS
-    public panda(){
+    public void panda(){
         // called implicitly
         //super();
     }
