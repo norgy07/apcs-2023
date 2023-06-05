@@ -29,10 +29,11 @@
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
-        "vscjava.vscode-java-pack",
-        "ms-toolsai.jupyter",
-        "ms-python.python"        
-      ]
+		"vscjava.vscode-java-pack",
+		"ms-toolsai.jupyter",
+		"ms-python.python",
+		"ecmel.vscode-html-css"
+	]
     }
   }
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
