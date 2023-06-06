@@ -1,10 +1,23 @@
-body {
-    background-color: powderblue;
+  header {
+    background-color: rgb(255, 255, 255);
   }
+
+  description {
+    max-width: fit-content;
+    max-height: fit-content;
+    background-color:rgb(167, 194, 245)
+  }
+
   h1 {
     color: blue;
   }
+
   p {
-    color: red;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  .logo{float:left; display: block; clear:both; position:relative; }
+  .logo{
+    
+    display: block; 
+    clear:both; 
+    position:relative; }
