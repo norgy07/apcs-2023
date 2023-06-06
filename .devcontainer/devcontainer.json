@@ -32,7 +32,8 @@
 		"vscjava.vscode-java-pack",
 		"ms-toolsai.jupyter",
 		"ms-python.python",
-		"ecmel.vscode-html-css"
+		"ecmel.vscode-html-css",
+		"HansUXdev.bootstrap5-snippets"
 	]
     }
   }
