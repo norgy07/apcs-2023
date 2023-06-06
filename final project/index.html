@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="https://github.com/norgy07/apcs-2023/blob/14565cf950c5e9dc5fb64510241281084cd53073/final%20project/style.css">
 <html lang="en">
     <head>
         <img src="affrm.png" alt="logo">
@@ -12,13 +13,23 @@
         <script>
             let row;
             let col; 
-            $.get('/docs/file.txt',{},function(content)){
-             let lines=content.split('\n');
-             console.log(`"file.txt" contains ${lines.length} lines`)
-             console.log(`First line : ${lines[0]}`)
+            let aff = [];
+           
+            fetch('affirmations.txt').then(function(response) {
+                return response.text();
+            }).then(function(content){
+                let lines = content.split('\n');
+            console.log(`"file.txt" contains ${lines.length} lines`)
+                console.log(`First line : ${lines[0]}`)
+            })
+
+            function randomize(){
+                for(let index = 0; index < lines.length(); ++){
+                    
+                }
             }
 
-            for(row)
+
         </script>
 >>>>>>> 14565cf950c5e9dc5fb64510241281084cd53073
     </body>
