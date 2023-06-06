@@ -21,16 +21,15 @@
                 let lines = content.split('\n');
             console.log(`"file.txt" contains ${lines.length} lines`)
                 console.log(`First line : ${lines[0]}`)
+                aff = lines;
             })
 
             function randomize(){
-                for(let index = 0; index < lines.length(); ++){
-                    
-                }
+                let num = Math.random()*lines.length();
+                return lines[num];
             }
 
-
         </script>
->>>>>>> 14565cf950c5e9dc5fb64510241281084cd53073
+        <h1>The Affirmation Station</h1>
     </body>
 </html>
