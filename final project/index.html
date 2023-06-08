@@ -1,22 +1,16 @@
 <!DOCTYPE html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
 <html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <img src="/final project/affrm.png" alt="logo" class="logo">
+</head>
+
     <body>
-    <p>
-        <img src="/final project/affrm.png" alt="logo" class="logo">
-    </p>
-      <br>
+
         <p class="descriptions">
             <p> The US is facing a mental health crisis with about 21% of adults in the US experiencing a mental illness and 10% of youth suffering from depressive episodes. This illustrates the need for healthy practices that improve indidvidual cognitive states. Psychologists and scientists have deducted that positive affirmations are step in the path to ending this issue and fostering a healthy nation. Affirmations can, however, be difficult to conduct on your own and without prompting. So, this web app will work to help people in their health journey. </p>
         </p>
-
-        <div id="aff">
-
-        </div>
-
 
         <script>
            
@@ -37,8 +31,11 @@
                 document.getElementById("aff").innerHTML = happy;
             }
            
-        </script>     
-
-        <button class="round" onclick="randomize()">Affirm</button>
+        </script>  
+        
+        <div class="gen">
+            <button class="round" onclick="randomize()">Affirm</button>
+        </div>
+        
     </body>
 </html>
