@@ -1,4 +1,4 @@
-# **affrm** (tm)
+# **affrm**
 ### By Naomi Norgard
 
 ## What the fork is your project?
@@ -11,5 +11,5 @@ I started off with a Codecademy course in JavaScript and after learning some bas
 
 ## How can we try this thing?
 
-It's published and you can access it here: 
+It's published and you can access it here: [https://norgy07.github.io/apcs-2023/]
 
